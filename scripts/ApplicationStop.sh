@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ `docker ps | grep boring_shockley | wc -l`  = 1 ]
+if [ `docker ps | grep devops | wc -l`  = 1 ]
 then
-        docker stop boring_shockley
-        docker rm  boring_shockley
+        docker stop devops
+        docker rm devops 
 fi
