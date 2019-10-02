@@ -1,4 +1,4 @@
 FROM rgps4502/devops:latest
-COPY inc /inc
+COPY ./inc /inc
 WORKDIR /app
-COPY web /app
+COPY ./web /app
