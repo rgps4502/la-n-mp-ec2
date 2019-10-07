@@ -61,7 +61,17 @@
       <td>
         <input type="submit" name="add" value="新增" />
       </td>
+      <td>
         <input type="submit" name="delet" value="刪除" />
+      </td>
+      <td>
+        <input type="submit" name="updateName" value="更新明子" />
+      </td>
+      <td>
+        <input type="submit" name="updateAddress" value="更新地址" />
+      </td>
+      <td>
+        <input type="submit" name="deletall" value="刪除全部" />
       </td>
     </tr>
   </table>
@@ -185,4 +195,3 @@ function TableExists($tableName, $connection, $dbName) {
   return false;
 }
 ?>
-

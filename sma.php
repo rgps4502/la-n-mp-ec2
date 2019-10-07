@@ -43,7 +43,6 @@
       deletallEmployee($connection, $employee_name, $employee_address);
     }
 ?>
-
 <!-- Input form -->
 <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
   <table border="0">
@@ -61,8 +60,7 @@
       <td>
         <input type="submit" name="add" value="新增" />
       </td>
-        <input type="submit" name="delet" value="刪除" />
-      </td>
+      <td>
     </tr>
   </table>
 </form>
@@ -99,6 +97,10 @@ while($query_data = mysqli_fetch_row($result)) {
 </body>
 </html>
 
+<div>
+<img src="http://www.bkill.com/u/upload/2018/10/23/240158136204.png" />
+<p style="background:url('http://www.bkill.com/u/upload/2018/10/23/240158136204.png') no-repeat;">多拉拉多拉拉</p>
+</div>
 <?php
 
 /* Add an employee to the table. */
