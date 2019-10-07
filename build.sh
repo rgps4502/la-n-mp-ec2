@@ -1,8 +1,8 @@
 set -ex
 #set registry
-USERNAME=129729052534.dkr.ecr.ap-northeast-1.amazonaws.com
+USERNAME=204065533127.dkr.ecr.ap-northeast-1.amazonaws.com
 # image name
-IMAGE=dc103_repo_dev
+IMAGE=dc103_project03_dev01
 docker build -t $USERNAME/$IMAGE:latest .
 version=`cat VERSION`
 echo "version: $version"

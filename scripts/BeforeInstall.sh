@@ -1,11 +1,11 @@
 #!/bin/bash
 
-$(aws ecr get-login --no-include-email --registry-ids 129729052534 --region ap-northeast-1)
+$(aws ecr get-login --no-include-email --registry-ids 204065533127 --region ap-northeast-1)
 
-if [ `docker images | grep dc103_repo_dev | wc -l`  = 1 ]
+if [ `docker images | grep dc103_project03_dev01 | wc -l`  = 1 ]
 then
-        docker rmi dc103_repo_dev
-        docker pull 129729052534.dkr.ecr.ap-northeast-1.amazonaws.com/dc103_repo_dev:latest
+        docker rmi dc103_project03_dev01
+        docker pull 204065533127.dkr.ecr.ap-northeast-1.amazonaws.com/dc103_project03_dev01:latest
 else
-        docker pull 129729052534.dkr.ecr.ap-northeast-1.amazonaws.com/dc103_repo_dev:latest
+        docker pull 204065533127.dkr.ecr.ap-northeast-1.amazonaws.com/dc103_project03_dev01:latest
 fi
