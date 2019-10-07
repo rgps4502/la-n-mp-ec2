@@ -43,6 +43,7 @@
       deletallEmployee($connection, $employee_name, $employee_address);
     }
 ?>
+
 <!-- Input form -->
 <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
   <table border="0">
@@ -61,6 +62,17 @@
         <input type="submit" name="add" value="新增" />
       </td>
       <td>
+        <input type="submit" name="delet" value="刪除" />
+      </td>
+      <td>
+        <input type="submit" name="updateName" value="更新明子" />
+      </td>
+      <td>
+        <input type="submit" name="updateAddress" value="更新地址" />
+      </td>
+      <td>
+        <input type="submit" name="deletall" value="刪除全部" />
+      </td>
     </tr>
   </table>
 </form>
@@ -97,11 +109,6 @@ while($query_data = mysqli_fetch_row($result)) {
 </body>
 </html>
 
-<div>
-<img src="http://www.bkill.com/u/upload/2018/10/23/240158136204.png" />
-<p style="background:url('http://www.bkill.com/u/upload/2018/10/23/240158136204.png') no-repeat;"><p style="text-align:center"><strong><span style="font-family:Courier New,Courier,monospace"><span style="font-size:48px"><a href="index.html">回到上一頁</a></span></span></strong></p>
-</p>
-</div>
 <?php
 
 /* Add an employee to the table. */
@@ -188,4 +195,3 @@ function TableExists($tableName, $connection, $dbName) {
   return false;
 }
 ?>
-

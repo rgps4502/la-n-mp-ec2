@@ -2,7 +2,6 @@
 <html>
 <body>
 <h1>Sample page</h1>
-<meta charset="UTF-8">
 <?php
 
   /* Connect to MySQL and select the database. */
@@ -23,26 +22,20 @@
     if (isset($_POST['add'])) {
       AddEmployee($connection, $employee_name, $employee_address);
     }
-    if (isset($_POST['select'])) {
-      selectEmployee($connection, $employee_name, $employee_address);
+    else if (isset($_POST['loopadd100'])) {
+      LoopAdd100Employee($connection, $employee_name, $employee_address);
     }
-    if (isset($_POST['delet'])) {
-      deletEmployee($connection, $employee_name, $employee_address);
+    else if (isset($_POST['loopadd1000'])) {
+      LoopAdd1000Employee($connection, $employee_name, $employee_address);
     }
-    if (isset($_POST['updateName'])) {
-      updateNameEmployee($connection, $employee_name, $employee_address);
-    }
-    if (isset($_POST['updateAddress'])) {
-      updateAddressEmployee($connection, $employee_name, $employee_address);
+    else if (isset($_POST['loopadd10000'])) {
+      LoopAdd10000Employee($connection, $employee_name, $employee_address);
     }
 
   }
 
-
-    if (isset($_POST['deletall'])) {
-      deletallEmployee($connection, $employee_name, $employee_address);
-    }
 ?>
+
 <!-- Input form -->
 <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
   <table border="0">
@@ -58,9 +51,8 @@
         <input type="text" name="Address" maxlength="90" size="60" />
       </td>
       <td>
-        <input type="submit" name="add" value="新增" />
+        <input type="submit" name="add" value="Add Data" />
       </td>
-      <td>
     </tr>
   </table>
 </form>
@@ -85,6 +77,7 @@ while($query_data = mysqli_fetch_row($result)) {
   echo "</tr>";
 }
 ?>
+
 </table>
 
 <!-- Clean up. -->
@@ -94,14 +87,11 @@ while($query_data = mysqli_fetch_row($result)) {
   mysqli_close($connection);
 
 ?>
+
 </body>
 </html>
 
-<div>
-<img src="http://www.bkill.com/u/upload/2018/10/23/240158136204.png" />
-<p style="background:url('http://www.bkill.com/u/upload/2018/10/23/240158136204.png') no-repeat;"><p style="text-align:center"><strong><span style="font-family:Courier New,Courier,monospace"><span style="font-size:48px"><a href="index.html">回到上一頁</a></span></span></strong></p>
-</p>
-</div>
+
 <?php
 
 /* Add an employee to the table. */
@@ -113,51 +103,7 @@ function AddEmployee($connection, $name, $address) {
 
    if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
 }
-/* Select employ to table. */
-function selectEmployee($connection, $name, $address) {
-   $n = mysqli_real_escape_string($connection, $name);
-   $a = mysqli_real_escape_string($connection, $address);
 
-   $query = "SELECT name,address FROM `Employees`";
-            
-   if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
-}
-
-/* Delet employ to table. */
-function deletEmployee($connection, $name, $address) {
-   $n = mysqli_real_escape_string($connection, $name);
-   $a = mysqli_real_escape_string($connection, $address);
-
-   $query = "DELETE FROM `Employees` WHERE (`name`, `address`) = ('$n', '$a');";
-                 
-   if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
-}
-/* updateName employ to table. */
-function updateNameEmployee($connection, $name, $address) {
-   $n = mysqli_real_escape_string($connection, $name);
-   $a = mysqli_real_escape_string($connection, $address);
-
-   $query = "UPDATE `Employees` SET name = ('$n') WHERE address = ('$a')";
-                               
-   if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
-}
-/* updateAddress employ to table. */
-function updateAddressEmployee($connection, $name, $address) {
-   $n = mysqli_real_escape_string($connection, $name);
-   $a = mysqli_real_escape_string($connection, $address);
-
-   $query = "UPDATE `Employees` SET address = ('$a') WHERE name = ('$n')";
-
-   if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
-}
-/* deletall employ to table. */
-function deletallEmployee($connection, $name, $address) {
-   $n = mysqli_real_escape_string($connection, $name);
-   $a = mysqli_real_escape_string($connection, $address);
-
-   $query = "DROP TABLE `Employees`";
-   if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
-}
 /* Check whether the table exists and, if not, create it. */
 function VerifyEmployeesTable($connection, $dbName) {
   if(!TableExists("Employees", $connection, $dbName)) 
@@ -174,6 +120,44 @@ function VerifyEmployeesTable($connection, $dbName) {
   }
 }
 
+/*Loop add 100 employee name and address. */
+function LoopAdd100Employee($connection, $name, $address) {
+   $n = mysqli_real_escape_string($connection, $name);
+   $a = mysqli_real_escape_string($connection, $address);
+   for ( $i=1 ; $i<=100 ; $i++ ){ 
+   $query = "INSERT INTO `Employees` (`Name`, `Address`) VALUES ('$n $i', '$a $i');";
+   if(!mysqli_query($connection, $query)) {
+   echo("<p>Error adding employee data.</p>");
+   $i = 100;
+   }
+   }
+}
+
+/*Loop add 1000 employee name and address. */
+function LoopAdd1000Employee($connection, $name, $address) {
+   $n = mysqli_real_escape_string($connection, $name);
+   $a = mysqli_real_escape_string($connection, $address);
+   for ( $i=1 ; $i<=1000 ; $i++ ){
+   $query = "INSERT INTO `Employees` (`Name`, `Address`) VALUES ('$n $i', '$a $i');";
+   if(!mysqli_query($connection, $query)) {
+   echo("<p>Error adding employee data.</p>");
+   $i = 1000;
+   }
+   }
+}
+
+/*Loop add 10000 employee name and address. */
+function LoopAdd10000Employee($connection, $name, $address) {
+   $n = mysqli_real_escape_string($connection, $name);
+   $a = mysqli_real_escape_string($connection, $address);
+   for ( $i=1 ; $i<=10000 ; $i++ ){
+   $query = "INSERT INTO `Employees` (`Name`, `Address`) VALUES ('$n $i', '$a $i');";
+   if(!mysqli_query($connection, $query)) {
+   echo("<p>Error adding employee data.</p>");
+   $i = 10000;
+   }
+   }
+}
 
 /* Check for the existence of a table. */
 function TableExists($tableName, $connection, $dbName) {
@@ -188,4 +172,3 @@ function TableExists($tableName, $connection, $dbName) {
   return false;
 }
 ?>
-
