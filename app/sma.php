@@ -69,6 +69,9 @@
       <td>
         <input type="submit" name="updateAddress" value="更新地址" />
       </td>
+        <td>
+        <input type="submit" name="deletall" value="刪除全部" />
+      </td>
       </table>
 </form>
 
