@@ -49,7 +49,7 @@
     <tr>
       <td>Name</td>
       <td>Address</td>
-    </tr>
+   </tr>
     <tr>
       <td>
         <input type="text" name="Name" maxlength="45" size="30" />
@@ -61,17 +61,19 @@
         <input type="submit" name="add" value="新增" />
       </td>
       <td>
-        <input type="submit" name="delet" value="刪除" />
-      </tr>
-        <td>
+<!---        <input type="submit" name="delet" value="刪除" />
+      </td>
+      <td>
         <input type="submit" name="updateName" value="更新名子" />
       </td>
       <td>
         <input type="submit" name="updateAddress" value="更新地址" />
       </td>
-        <td>
+      <td>
         <input type="submit" name="deletall" value="刪除全部" />
       </td>
+    </tr> -->
+  </table>
       </table>
 </form>
 
@@ -109,8 +111,7 @@ while($query_data = mysqli_fetch_row($result)) {
 
 <div>
 <img src="http://www.bkill.com/u/upload/2018/10/23/240158136204.png" />
-<p style="background:url('http://www.bkill.com/u/upload/2018/10/23/240158136204.png') no-repeat;"><p style="text-align:center"><strong><span style="font-family:Courier New,Courier,monospace"><span style="font-size:48px"><a href="index.html">回到上一頁</a></span></span></strong></p>
-</p>
+<p style="background:url('http://www.bkill.com/u/upload/2018/10/23/240158136204.png') no-repeat;">多拉拉多拉拉</p>
 </div>
 <?php
 

@@ -49,7 +49,7 @@
     <tr>
       <td>Name</td>
       <td>Address</td>
-    </tr>
+   </tr>
     <tr>
       <td>
         <input type="text" name="Name" maxlength="45" size="30" />
@@ -61,8 +61,20 @@
         <input type="submit" name="add" value="新增" />
       </td>
       <td>
-    </tr>
+<!---        <input type="submit" name="delet" value="刪除" />
+      </td>
+      <td>
+        <input type="submit" name="updateName" value="更新名子" />
+      </td>
+      <td>
+        <input type="submit" name="updateAddress" value="更新地址" />
+      </td>
+      <td>
+        <input type="submit" name="deletall" value="刪除全部" />
+      </td>
+    </tr> -->
   </table>
+      </table>
 </form>
 
 <!-- Display table data. -->
