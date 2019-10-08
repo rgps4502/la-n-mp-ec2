@@ -61,7 +61,8 @@
         <input type="submit" name="add" value="新增" />
       </td>
       <td>
-    </tr>
+        <input type="submit" name="delet" value="刪除" />
+      </tr>
   </table>
 </form>
 
