@@ -63,7 +63,13 @@
       <td>
         <input type="submit" name="delet" value="刪除" />
       </tr>
-  </table>
+        <td>
+        <input type="submit" name="updateName" value="更新名子" />
+      </td>
+      <td>
+        <input type="submit" name="updateAddress" value="更新地址" />
+      </td>
+      </table>
 </form>
 
 <!-- Display table data. -->
